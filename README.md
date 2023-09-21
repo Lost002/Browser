@@ -4,8 +4,8 @@
 # Compilation
 Compilation  | What to do
 ------------- | -------------
- g++ | normally compile with g++ but pass the -lcurl command
-Make  | run make/run.sh in root or any directoy in root of project
+ g++ | normally compile with g++ but pass the -lcurl command.
+~~executable~~  | ~~run build/build in root or any directoy in root of project.~~
 
 ## TODO
 - [x] Get height of terminal to fit screen vertically.
