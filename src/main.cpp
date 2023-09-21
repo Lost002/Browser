@@ -39,17 +39,28 @@ void gwgh() {
     #endif
 }
 
+void init_screen() {
+    if (cols>=80) {
+        std::cout<<"\033[1;42m ";
+        for (int b=0; b<cols-1; b++) {
+            std::cout << " ";
+        }
+        for (int a=0; a<lines-2; a++) {
+            std::cout<<"\033[0m\n";
+        }
+        std::cout << "\033[1;42m [E] Exit   |   [S]Search: \033[0m";
+    } else {
+        std::cout<< 
+    }
+}
+
 void parse() {;}
 
 int main() {
     while (true) {
         int spaces = cols/3;
         gwgh();
-        for (int a=0; a<lines-3; a++) {
-            std::cout<<"\n";
-        }
-
-        std::cout << "\033[1;42m [E] Exit   |   [S]Search: \033[0m";
+        init_screen();
         std::cin >> searchquery;
         std::system("clear");
         //libcurl("https://google.com");
