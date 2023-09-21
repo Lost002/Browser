@@ -37,28 +37,24 @@ void gwgh() {
         cols = ts.ws_col;
         lines = ts.ws_row;
     #endif
-
 }
 
 void parse() {;}
 
 int main() {
-    int spaces = cols/3;
-    std::string bottombar;
-    gwgh();
-    for (int a=0; a<lines-3; a++) {
-        std::cout<<"\n";
-    }
-    for (int b; b<2; b++) {
-        for (int c; c<spaces; c++) {
-            bottombar += " ";
+    while (true) {
+        int spaces = cols/3;
+        gwgh();
+        for (int a=0; a<lines-3; a++) {
+            std::cout<<"\n";
         }
+
+        std::cout << "\033[1;42m [E] Exit   |   [S]Search: \033[0m";
+        std::cin >> searchquery;
+        std::system("clear");
+        //libcurl("https://google.com");
+        //std::cout << readBuffer;
+        //std::cout << "\n \033[1;42mbold red text\033[0m\n";
     }
-    std::cout << "\033[1;42m [E] Exit   |   [S]Search: ";
-    std::cin >> searchquery;
-    std::cout<<"\033[0m";
-    //libcurl("https://google.com");
-    //std::cout << readBuffer;
-    //std::cout << "\n \033[1;42mbold red text\033[0m\n";
     return 0;
 }

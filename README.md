@@ -1,8 +1,11 @@
 # Dependencies
 - libcurl (install e.g. Ubuntu 'sudo apt install libcurl4')
 
-# Manual compilation
-- Compile with -lcurl
+# Compilation
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 ## TODO
 - [x] Get height of terminal to fit screen vertically.
