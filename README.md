@@ -2,10 +2,10 @@
 - libcurl (install e.g. Ubuntu 'sudo apt install libcurl4')
 
 # Compilation
-First Header  | Second Header
+Compilation  | What to do
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+ g++ | normally compile with g++ but pass the -lcurl command
+Make  | run make/run.sh in root or any directoy in root of project
 
 ## TODO
 - [x] Get height of terminal to fit screen vertically.
