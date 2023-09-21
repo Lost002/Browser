@@ -40,17 +40,20 @@ void gwgh() {
 }
 
 void init_screen() {
-    if (cols>=80) {
+    if (cols>=80 && lines>=15) {
         std::cout<<"\033[1;42m ";
-        for (int b=0; b<cols-1; b++) {
+        for (int a=0; a<cols-1; a++) {
             std::cout << " ";
-        }
-        for (int a=0; a<lines-2; a++) {
+        } for (int b=0; b<lines-2; b++) {
             std::cout<<"\033[0m\n";
+        } std::cout<<"\033[46m"; for (int c=0; c<cols-1; c++) {
+            std::cout<< " ";
         }
-        std::cout << "\033[1;42m [E] Exit   |   [S]Search: \033[0m";
+        std::cout<<"\033[0m\n";
+        std::cout << "\033[42;37m [E] Exit   |   \033[1mSearch:\033[0m ";
     } else {
-        std::cout<< 
+        std::cout << "\033[1;31mTerminal is too small to display, please resize!\nTerminating...\033[0m\n ";
+        abort();        
     }
 }
 
