@@ -6,6 +6,7 @@
 
 
 std::string readBuffer, searchquery;
+std::string bottombar = "\033[42;37m [E] Exit   |   \033[1mSearch:\033[0m ";
 int cols, lines;
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp){
@@ -67,10 +68,8 @@ int main() {
         init_screen();
         std::cin >> searchquery;
         std::system("clear");
-        libcurl("https://google.com");
+        libcurl(searchquery);
         //std::cout << readBuffer;
-        //std::cout << "\n \033[1;42mbold red text\033[0m\n";
     }
-    //std::cout << readBuffer;
     return 0;
 }
