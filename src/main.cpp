@@ -5,8 +5,9 @@
 #include <unistd.h>
 
 
-std::string readBuffer, searchquery;
-std::string bottombar = "\033[42;37m [E] Exit   |   \033[1mSearch:\033[0m ";
+std::string readBuffer;
+const char * searchquery;
+std::string bottombar = "\033[42;37m [E] Exit   |   [D] Down    |   [U] Up  |   [1,2,3,ect...] Select   |   \033[1mSearch:\033[0m ";
 int cols, lines;
 
 static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp){
@@ -58,15 +59,37 @@ void init_screen() {
         abort();        
     }
 }
+void searchscreen() {
+    std::string lines;
+    int numberoflines = 0;
+    while (getline(readBuffer, lines)) {
+        numberoflines++;
+        std::cout<<"\033[1;42m ";
+        for (int a=0; a<cols-1; a++) {
+            std::cout << " ";
+        }
+        std::cout << "\033[0m\n";
+        std::cout<<lines<<"\n";
+        std::cout<<bottombar;
+    }
+}
 
 void parse() {;}
 
 int main() {
+    bool searched = false;
+    std::string choice;
+    gwgh();
     while (true) {
-        int spaces = cols/3;
-        gwgh();
-        init_screen();
-        std::cin >> searchquery;
+        if (searched==false) {
+            init_screen();
+            std::cin >> choice;
+            searched=true;
+            searchquery = choice.c_str();
+        } else {
+            searchscreen();
+            std::cin >> choice;
+        }
         std::system("clear");
         libcurl(searchquery);
         //std::cout << readBuffer;
