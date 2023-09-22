@@ -9,7 +9,8 @@ Compilation  | What to do
 
 ## TODO
 - [x] Get height of terminal to fit screen vertically.
-- [ ] Get length of terminal to fit screen horizontally.
-- [ ] Check length and width of terminal to make sure users terminal isnt to small.
+- [x] Get length of terminal to fit screen horizontally.
+- [x] Check length and width of terminal to make sure users terminal isnt to small.
 - [ ] HTML parser.
-- [ ] Get HTML when enter is pressed on search bar
+- [ ] Get HTML when "enter" is pressed on search bar
+- [ ] Revamp initial screen.

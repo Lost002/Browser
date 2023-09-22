@@ -12,18 +12,19 @@ static size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *use
     ((std::string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 }
-//void libcurl(const char * domain) {
-//    CURL * curl;
-//    CURLcode res;
-//    
-//    curl = curl_easy_init();
-//    
-//    curl_easy_setopt(curl, CURLOPT_URL, domain);
-//    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
-//    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
-//    res = curl_easy_perform(curl);
-//    curl_easy_cleanup(curl);
-//}
+
+void libcurl(const char * domain) {
+    CURL * curl;
+    CURLcode res;
+    
+    curl = curl_easy_init();
+    
+    curl_easy_setopt(curl, CURLOPT_URL, domain);
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+}
 
 void gwgh() {
     #ifdef TIOCGSIZE
@@ -66,9 +67,10 @@ int main() {
         init_screen();
         std::cin >> searchquery;
         std::system("clear");
-        //libcurl("https://google.com");
+        libcurl("https://google.com");
         //std::cout << readBuffer;
         //std::cout << "\n \033[1;42mbold red text\033[0m\n";
     }
+    //std::cout << readBuffer;
     return 0;
 }
