@@ -62,36 +62,42 @@ void init_screen() {
 void searchscreen() {
     std::string lines;
     int numberoflines = 0;
-    while (getline(readBuffer, lines)) {
-        numberoflines++;
-        std::cout<<"\033[1;42m ";
-        for (int a=0; a<cols-1; a++) {
-            std::cout << " ";
-        }
+    //while (getline(readBuffer, lines)) {
+    //    numberoflines++;
+    //    std::cout<<"\033[1;42m ";
+    //    for (int a=0; a<cols-1; a++) {
+    //        std::cout << " ";
+    //    }
         std::cout << "\033[0m\n";
         std::cout<<lines<<"\n";
         std::cout<<bottombar;
     }
-}
+//}
 
-void parse() {;}
+void write(std::string data) {
+    std::ofstream datafile();
+}
 
 int main() {
     bool searched = false;
     std::string choice;
     gwgh();
     while (true) {
-        if (searched==false) {
-            init_screen();
-            std::cin >> choice;
-            searched=true;
-            searchquery = choice.c_str();
-        } else {
-            searchscreen();
-            std::cin >> choice;
-        }
+        init_screen();
+        std::cin >> choice;
+        searchquery = choice.c_str();
+        //if (searched==false) {
+        //    init_screen();
+        //    std::cin >> choice;
+        //    searched=true;
+        //    searchquery = choice.c_str();
+        //} else {
+        //    searchscreen();
+        //    std::cin >> choice;
+        //}
         std::system("clear");
         libcurl(searchquery);
+
         //std::cout << readBuffer;
     }
     return 0;
